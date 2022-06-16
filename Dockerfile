@@ -10,7 +10,7 @@ ENV Entry="${Service}.dll"
 COPY ./$Service/ ./$Service/
 
 # RUN dotnet restore ./$Service/Moonlight.$Service.api/Moonlight.$Service.api.csproj
-RUN dotnet publish ./$Service/$Service -c Release -o /app/out
+RUN dotnet publish ./$Service -c Release -o /app/out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
