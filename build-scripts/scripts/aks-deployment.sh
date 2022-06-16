@@ -13,20 +13,20 @@ cat $GITHUB_WORKSPACE/build-scripts/manifest/aks_ingress.yml
 az aks command invoke \
     -g $RG \
     -n $AKS \
-    --command "kubectl apply -f deployment.yml -n $NAMESPACE" \
+    --command "kubectl apply -f aks_deployment.yml -n $NAMESPACE" \
     --file $GITHUB_WORKSPACE/build-scripts/manifest/aks_deployment.yml
 
 az aks command invoke \
     -g $RG \
     -n $AKS \
-    --command "kubectl apply -f service.yml -n $NAMESPACE" \
+    --command "kubectl apply -f aks_service.yml -n $NAMESPACE" \
     --file $GITHUB_WORKSPACE/build-scripts/manifest/aks_service.yml
 
 
 az aks command invoke \
     -g $RG \
     -n $AKS \
-    --command "kubectl apply -f ingress.yml -n $NAMESPACE" \
+    --command "kubectl apply -f aks_ingress.yml -n $NAMESPACE" \
     --file $GITHUB_WORKSPACE/build-scripts/manifest/aks_ingress.yml
 
 rm ./build-scripts/manifest/aks_deployment.yml
