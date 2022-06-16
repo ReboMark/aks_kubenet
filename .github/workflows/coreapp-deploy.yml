@@ -67,7 +67,7 @@ jobs:
       - name: Deploy App to AKS
         run: |
           export service=$SERVICE
-          export command=$SERVICE.api.dll
+          export command=$SERVICE.dll
           export namespace=$NAMESPACE
           export image=$IMAGE
           export appsettings=staging
