@@ -16,3 +16,22 @@ spec:
     targetPort: 80
     protocol: TCP
     name: http
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${service}
+  namespace: core-qa
+  labels:
+    app: ${service}
+spec:
+  type: ClusterIP
+  selector:
+    app: ${service}
+  ports:
+  - protocol: TCP
+    targetPort: 80
+    port: 80
+    name: http
