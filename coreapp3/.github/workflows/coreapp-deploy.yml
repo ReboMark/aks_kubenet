@@ -1,0 +1,74 @@
+name: Core App Deploy (.Net 6)
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      SERVICE: coreapp3
+      NAMESPACE: core-staging
+
+    steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_DEV_CREDS_LUX }}
+      
+      - name: Ready Environment Variables
+        run: |
+          echo "ACR_IO=eldedcsaacrs01.azurecr.io" >> $GITHUB_ENV
+          echo "ENV=staging" >> $GITHUB_ENV
+
+      - name: Get Short Sha
+        run: |
+          echo "SHORT_SHA=`echo ${{ github.sha }} | cut -c1-7`" >> $GITHUB_ENV
+
+      - name: Set Image
+        run: |
+          echo "IMAGE=$ACR_IO/$SERVICE:$ENV-$SHORT_SHA" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: ACR Login
+        uses: azure/docker-login@v1
+        with:
+          login-server: eldedcsaacrs01.azurecr.io
+          username: ELDEDCSAACRS01
+          password: O9kJ7=qFuFs8qA7Y3h8Zc/f7BZq8x7mw
+      
+      - name: Build and push image to ACR
+        id: build-image
+        run: |
+          docker build "$GITHUB_WORKSPACE/" -t $IMAGE --build-arg ServiceName=$SERVICE
+          docker push $IMAGE
+
+      - uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.ak8s_kube_config_staging }}
+      
+      - name: Set AKS Namespace
+        run: |
+          az aks command invoke -g $RG -n $AKS --command "kubectl create namespace $NAMESPACE --dry-run=client -o json | kubectl apply -f -"
+
+      - name: Set AKS Namespace
+        run: |
+          az aks command invoke -g $RG -n $AKS --command "kubectl create namespace $NAMESPACE --dry-run=client -o json | kubectl apply -f -"
+
+      - name: Clear Previous Deployment of AKS
+        run:
+          bash ./build-scripts/scripts/clear-aks-deployment.sh
+
+      - name: Deploy App to AKS
+        run: |
+          export service=$SERVICE
+          export command=$SERVICE.api.dll
+          export namespace=$NAMESPACE
+          export image=$IMAGE
+          export appsettings=staging
+          export region=westus2
+
+      

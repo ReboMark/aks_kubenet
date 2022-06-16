@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ${service}-ingress
+  namespace: ${namespace}
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/ssl-redirect: "true"
+    appgw.ingress.kubernetes.io/appgw-ssl-certificate: core
+    appgw.ingress.kubernetes.io/backend-path-prefix: "/"
+  labels:
+    name: ditac-ingress
+spec:
+  rules:
+  - host: dev-${service}-api.ditac-core.net
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: ${service}-service
+            port:
+              number: 80

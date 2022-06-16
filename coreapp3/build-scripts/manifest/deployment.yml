@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${service}-dep
+  namespace: ${namespace}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ${service}
+  template:
+    metadata:
+      labels:
+        app: ${service}
+    spec:
+      containers:
+      - name: ${service}
+        image: ${image}
+        command: ["dotnet", "${command}"]
+        imagePullPolicy: Always
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: ${appsettings}
+        - name: "REGION"
+          value: ${region}
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+        ports:
+        - containerPort: 80

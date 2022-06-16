@@ -6,7 +6,6 @@ namespace coreapp3.Model
     {
         public UserModel(dbUsers users)
         {
-            Id = users.Id;
             UserId = users.UserId;
             UserName = users.UserName;
             MobileNumber = users.MobileNumber;

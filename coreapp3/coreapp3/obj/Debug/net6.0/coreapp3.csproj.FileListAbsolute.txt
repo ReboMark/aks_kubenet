@@ -36,7 +36,6 @@ C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\obj\Debug\net6.0\ref\coreapp3.dll
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\obj\Debug\net6.0\coreapp3.pdb
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\bin\Debug\net6.0\appsettings.json
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\bin\Debug\net6.0\coreapp3.exe
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\bin\Debug\net6.0\coreapp3.deps.json
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\bin\Debug\net6.0\coreapp3.runtimeconfig.json
@@ -89,3 +88,4 @@ C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\obj\Debug\net6.0\scopedcss\bundle\coreapp3.styles.css
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\obj\Debug\net6.0\coreapp3.csproj.CopyComplete
 C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\obj\Debug\net6.0\coreapp3.genruntimeconfig.cache
+C:\Users\rebo.agustines\Documents\Repo\Kubenet_POC\aks_kubenet\coreapp3\coreapp3\bin\Debug\net6.0\appsettings.staging.json
