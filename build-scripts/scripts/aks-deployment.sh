@@ -2,7 +2,7 @@ envsubst < ./build-scripts/manifest/deployment.yml > ./build-scripts/manifest/ak
 envsubst < ./build-scripts/manifest/service.yml > ./build-scripts/manifest/aks_service.yml
 envsubst < ./build-scripts/manifest/ingress.yml > ./build-scripts/manifest/aks_ingress.yml
 
-ls $GITHUB_WORKSPACE/build-scripts/manifest/aks-manifest/
+ls $GITHUB_WORKSPACE/build-scripts/manifest/
 
 cat $GITHUB_WORKSPACE/build-scripts/manifest/aks_deployment.yml
 echo
