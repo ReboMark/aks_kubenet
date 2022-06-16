@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lBKosjoNsPIOTtpt5yjGKvsGw9LdRt+06R9kuMQY3FRfUjFMfKCPMJwFIu8u6tNSkMGMfTi3HDzT+H2gY8qTog==",
+  "dgSpecHash": "k/DorLdixEmgnq+KvFkEjltPEGqf0SJgIBDtGfZIYxvgdxENAXDMJFRbhR95QYgLk5EHZ+rlbD1SdvTUVzuB3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rebo.agustines\\Documents\\Repo\\Kubenet_POC\\aks_kubenet\\coreapp3\\coreapp3\\coreapp3.csproj",
+  "projectFilePath": "C:\\Users\\rebo.agustines\\Documents\\Repo\\Kubenet_POC\\aks_kubenet\\coreapp3\\coreapp3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rebo.agustines\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rebo.agustines\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",

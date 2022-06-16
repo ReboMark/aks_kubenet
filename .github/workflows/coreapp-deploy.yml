@@ -20,6 +20,8 @@ jobs:
         run: |
           echo "ACR_IO=eldedcsaacrs01.azurecr.io" >> $GITHUB_ENV
           echo "ENV=staging" >> $GITHUB_ENV
+          echo "RG=ELD-EDCSA-RG-S01" >> $GITHUB_ENV
+          echo "AKS=ELD-EDCSA-AKS-S01" >> $GITHUB_ENV
 
       - name: Get Short Sha
         run: |
@@ -70,5 +72,6 @@ jobs:
           export image=$IMAGE
           export appsettings=staging
           export region=westus2
+          bash ./build-scripts/scripts/aks-deployment.sh
 
       
