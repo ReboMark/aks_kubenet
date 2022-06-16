@@ -1,6 +1,6 @@
-envsubst < ./build-scripts/manifest/deployment.yml > ./build-scripts/manifest/aks_deployment.yml
-envsubst < ./build-scripts/manifest/service.yml > ./build-scripts/manifest/aks_service.yml
-envsubst < ./build-scripts/manifest/ingress.yml > ./build-scripts/manifest/aks_ingress.yml
+envsubst < ./build-scripts/manifest/deployment.yml > $GITHUB_WORKSPACE/build-scripts/manifest/aks_deployment.yml
+envsubst < ./build-scripts/manifest/service.yml > $GITHUB_WORKSPACE/build-scripts/manifest/aks_service.yml
+envsubst < ./build-scripts/manifest/ingress.yml > $GITHUB_WORKSPACE/build-scripts/manifest/aks_ingress.yml
 
 ls $GITHUB_WORKSPACE/build-scripts/manifest/
 
